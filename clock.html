@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>clock</title>
+
+	<style>
+		.clock1
+		{
+			position: relative;
+			background-repeat: no-repeat;
+			width: 600px;
+			height: 600px;
+			background-image: url('clock.png');
+			background-size: 100%;
+			margin: auto;
+
+		}
+
+
+		#hour
+		{
+			position: absolute;
+			background: black;
+			border-radius: 10px;
+			width: 1.6%;
+			height: 20%;
+			top: 27%;
+			left:50.6%;
+			opacity: 0.8;
+		
+			transform-origin: bottom;
+			
+			
+			
+
+		}
+		.min
+		{
+			position: absolute;
+			background: black;
+			border-radius: 10px;
+			width: 1%;
+			height: 22%;
+			top: 25%;
+			left:49.8%;
+			opacity: 0.8;
+			transform-origin: bottom;
+			
+		
+		
+		}
+		.second
+		{
+			position: absolute;
+			background: black;
+			border-radius: 3px;
+			width: 0.5%;
+			height: 26%;
+			top: 22%;
+			left:49.8%;
+			opacity: 0.8;
+		    transform-origin: bottom;
+			
+			
+			
+			
+		}
+		.circle
+		{
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			background-color: black;
+		}
+		.c
+		{
+			padding-left: 280px;
+			padding-top: 260px;
+		}
+
+				.digitalClock
+		{
+
+			display: flex;
+			font-size: 12vw;		   
+			font-weight: bold;
+			color:black;
+			height: 20%;
+			width: 60%;
+			
+			text-align: center;
+			padding-left: 30%;
+
+		}
+	</style>
+</head>
+<body >
+	<div class="clock1">
+		<div class="c"><div class="circle"></div></div>
+		<div id="hour"></div>
+		<div class="min" id="min"></div>
+		<div class="second" id="second"></div>
+	</div>
+	<div class="digitalClock">
+		<div class="dhour" id="dh" >00:</div>
+		<div class="dmin" id="dm">00:</div>
+		<div class="dsec" id="ds">00</div>
+		
+
+	</div>
+
+
+
+	<script>
+
+		setInterval(()=>{
+			console.log('x')
+			date1 = new Date();
+			hourt = date1.getHours();
+			minutet = date1.getMinutes();
+			secondt = date1.getSeconds();
+			hrotation = 30*hourt+minutet/2;
+            mrotation = 6*minutet;
+            srotation = 6*secondt;
+
+
+
+            document.getElementById('dh').innerHTML = hourt;
+            document.getElementById('dm').innerHTML = ':'+minutet;
+            document.getElementById('ds').innerHTML = ':'+secondt;
+            hour.style.transform = `rotate(${hrotation}deg)`;
+            min.style.transform = `rotate(${mrotation}deg)`;
+            second.style.transform = `rotate(${srotation}deg)`;
+		},1000);
+	</script>
+
+
+
+</body>
+</html>
